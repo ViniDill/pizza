@@ -365,6 +365,10 @@ footer {
         display: none;
     }
 
+    .contentsobre h2, .cardapio h2 {
+        margin: 140px 0;
+    }
+
     .one,
     .two,
     .three {
