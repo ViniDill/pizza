@@ -10,17 +10,17 @@ menuToggle.addEventListener("click", () => {
 });
 
 menuLinks.forEach(link => {
-    link.addEventListener("click", (event) => {
+    link.addEventListener("click", () => {
         menuContent.classList.remove("on");
+
         const targetId = link.getAttribute("href").substring(1);
         const targetSection = document.getElementById(targetId);
-        const headerHeight = document.querySelector('header').offsetHeight;
-        const targetSectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
-        const newScrollY = targetSectionTop - headerHeight;
+
+        const offsetTop = targetSection.offsetTop;
+
         window.scrollTo({
-            top: newScrollY,
-            behavior: 'smooth'
+            top: offsetTop,
+            behavior: "smooth"
         });
-        event.preventDefault();
     });
 });
